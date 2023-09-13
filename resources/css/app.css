@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/poppins-regular.woff2') format('woff2'),
+        url('../fonts/poppins-regular.woff') format('woff');
+}
+
+p,h1,h2,h3,h4,h5,span,div{
+    font-family: 'Poppins', sans-serif !important;
+    color: #444; 
+}
+
+.footerGrad{
+    background-color: rgb(105, 221, 127) ;
+    background-color: linear-gradient(140deg, rgba(105, 221, 127, 1) 0%, rgba(255, 249, 132, 1) 58%);
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-container thead {
+    position: sticky;
+    top: 0;
+    background-color: #f5f5f5;
+    z-index: 1;
+}
+
+.table-container th,
+.table-container td {
+    padding: 8px;
+    font-size: 11px;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+}

@@ -1,0 +1,41 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "start": "php artisan serve --host=0.0.0.0 --port=3000 ",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production",
+        "combine": "mix watch && php artisan serve --host=0.0.0.0 --port=3000 "
+    },
+    "devDependencies": {
+        "@babel/preset-react": "^7.16.7",
+        "@headlessui/react": "^1.4.2",
+        "@inertiajs/inertia": "^0.11.0",
+        "@inertiajs/inertia-react": "^0.8.0",
+        "@inertiajs/progress": "^0.2.6",
+        "@tailwindcss/forms": "^0.4.0",
+        "autoprefixer": "^10.4.2",
+        "axios": "^0.21",
+        "echarts": "^5.4.3",
+        "laravel-mix": "^6.0.6",
+        "lodash": "^4.17.19",
+        "postcss": "^8.4.6",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "tailwindcss": "^3.0.18"
+    },
+    "dependencies": {
+        "@ant-design/icons": "^5.2.5",
+        "@fortawesome/fontawesome-svg-core": "^6.4.2",
+        "@fortawesome/free-solid-svg-icons": "^6.4.2",
+        "@fortawesome/react-fontawesome": "^0.2.0",
+        "antd": "^5.8.4",
+        "moment": "^2.29.4",
+        "react-router-dom": "^6.15.0",
+        "tableau-api": "^2.2.3"
+    }
+}
