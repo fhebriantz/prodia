@@ -51,6 +51,10 @@ export default function Welcome(props) {
     const handleDownload = async () => {
         compressImagesToZip(listimage);
     }
+    
+    const handleModelChange = (value) => {
+        setModel(value);
+    };
     const negative1 = "black and white, close up, cartoon, 3d, denim, (disfigured), (deformed), (poorly drawn), (extra limbs), blurry, boring, sketch, lackluster, signature, letters, watermark, low res , horrific , mutated , artifacts , bad art , gross , b&w , poor quality, low quality , cropped, 3d, render, doll, plastic, blur, haze, monochrome, b&w, text, (ugly:1.2), unclear eyes, no arms, bad anatomy, cropped, censoring, asymmetric eyes, bad anatomy, bad proportions, cropped, cross-eyed, deformed, extra arms, extra fingers, extra limbs, fused fingers, jpeg artifacts, malformed, mangled hands, misshapen body, missing arms, missing fingers, missing hands, missing legs, poorly drawn, tentacle finger, too many arms, too many fingers, watermark, logo, text, letters, signature, username, words, blurry, cropped, jpeg artifacts, low quality, lowres, (asian face)++"
     const negative2 = "(poorly drawn face)++, (dark skin, tan skin)++, (character out of frame)1.3, bad quality, low-res, (monochrome)1.1, (grayscale)1.3, acne, skin blemishes, bad anatomy, text, error, missing fingers, extra limbs, missing limbs, cut off, unrealistic, (asian face)++,  (cropped, lowres, text, watermark, logo, signature, jpeg artifacts, username, artist name, trademark, title, multiple view, Reference sheet, long neck, logo, tattoos)"
     const handleTruncate = async () => { 
@@ -140,12 +144,12 @@ export default function Welcome(props) {
                             <Card showHeader={false} style={{textAlign:'center'}}>
                             <Row>
                                 <Col sm={12}>URL</Col>
-                                <Col sm={12}><Input defaultValue={imageUrl} onChange={e => setImageUrl(e.target.value)} /></Col>
+                                <Col sm={12}><Input value={imageUrl} onChange={e => setImageUrl(e.target.value)} /></Col>
                             </Row>
                             <Row>
                                 <Col sm={12}>Model</Col>
                                 <Col sm={12}>
-                                <Select defaultValue={model} onChange={e => setModel(e.value)}>
+                                <Select defaultValue={model} onChange={handleModelChange}>
                                     <Option value='absolutereality_v181.safetensors [3d9d4d2b]'>Absolute Reality</Option>
                                     <Option value='anythingV5_PrtRE.safetensors [893e49b9]'>Anything V5</Option>
                                     <Option value='dreamshaper_8.safetensors [9d40847d]'>Dreamshaper 8</Option>
@@ -154,20 +158,20 @@ export default function Welcome(props) {
                             </Row>
                             <Row>
                                 <Col sm={12}>Prompt</Col>
-                                <Col sm={12}><Input defaultValue={prompt} onChange={e => setPrompt(e.target.value)} /></Col>
+                                <Col sm={12}><Input value={prompt} onChange={e => setPrompt(e.target.value)} /></Col>
                             </Row>
                             <Row>
                                 <Col sm={12}>Denoising</Col>
-                                <Col sm={12}><Input defaultValue={denoising} onChange={e => setDenoising(e.target.value)} /></Col>
+                                <Col sm={12}><Input value={denoising} onChange={e => setDenoising(e.target.value)} /></Col>
                             </Row>
                             <Row>
                                 <Col sm={12}>Set Time Out (Second)</Col>
-                                <Col sm={12}><Input defaultValue={time} onChange={e => setTime(e.target.value)} /></Col>
+                                <Col sm={12}><Input value={time} onChange={e => setTime(e.target.value)} /></Col>
                             </Row>
                                 
                             <Row>
                                 <Col sm={12}>Loop Times</Col>
-                                <Col sm={12}><Input defaultValue={loop} onChange={e => setLoop(e.target.value)} /></Col>
+                                <Col sm={12}><Input value={loop} onChange={e => setLoop(e.target.value)} /></Col>
                             </Row>
                                 <Button className='m-1' type="primary" warning onClick={handleClick} loading={loadings}>Render</Button>
                                 <Button className='m-1' type="primary" danger onClick={handleTruncate} loading={loadings}>Truncate</Button>
