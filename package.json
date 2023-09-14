@@ -33,7 +33,9 @@
         "@fortawesome/fontawesome-svg-core": "^6.4.2",
         "@fortawesome/free-solid-svg-icons": "^6.4.2",
         "@fortawesome/react-fontawesome": "^0.2.0",
-        "antd": "^5.8.4",
+        "antd": "^5.9.0",
+        "file-saver": "^2.0.5",
+        "jszip": "^3.10.1",
         "moment": "^2.29.4",
         "react-router-dom": "^6.15.0",
         "tableau-api": "^2.2.3"
