@@ -13,7 +13,7 @@ import axios from 'axios';
 export default function Welcome(props) {
     const {title,url} = props
     const [model, setModel] = useState('dreamshaper_8.safetensors [9d40847d]');
-    const [prompt, setPrompt] = useState('sexy girl with glasses');
+    const [prompt, setPrompt] = useState('puppies with glassess');
     const [denoising, setDenoising] = useState(0.4);
 
 
@@ -24,7 +24,7 @@ export default function Welcome(props) {
     const [loadings, setLoadings] = useState(false);
     const [image, setImage] = useState('');
     const [listimage, setListimage] = useState([]);
-    const [imageUrl, setImageUrl] = useState('https://cdn.discordapp.com/attachments/1090254309565935659/1151527673802276938/799ab1bf-8cc2-4350-83a5-c180f17c8d8a.png');
+    const [imageUrl, setImageUrl] = useState('https://images.newscientist.com/wp-content/uploads/2021/06/03141753/03-june_puppies.jpg');
     
     const compressImagesToZip = async (imageUrls) => {
         const zip = new JSZip();
