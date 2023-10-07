@@ -44,13 +44,13 @@ export default function Welcome(props) {
             setLoadings(false)
             })
     }
-    const negative1 = "(black and white, close up, cartoon, 3d, denim, (disfigured), (deformed), (poorly drawn), (extra limbs), blurry, boring, sketch, lackluster, signature, letters, watermark, low res , horrific , mutated , artifacts , bad art , gross , b&w , poor quality, low quality , cropped, 3d, render, doll, plastic, blur, haze, monochrome, b&w, text, (ugly:1.2), unclear eyes, no arms, bad anatomy, cropped, censoring, asymmetric eyes, bad anatomy, bad proportions, cropped, cross-eyed, deformed, extra arms, extra fingers, extra limbs, fused fingers, jpeg artifacts, malformed, mangled hands, misshapen body, missing arms, missing fingers, missing hands, missing legs, poorly drawn, tentacle finger, too many arms, too many fingers, watermark, logo, text, letters, signature, username, words, blurry, cropped, jpeg artifacts, low quality, lowres)"
+    const negative1 = "(worst quality, bad quality:2.0), (bad-hands-5, badhandv4:1.0), (easynegativev2:1.2), (bad-artist-anime, bad-artist, bad_prompt, bad-picture-chill-75v, bad_prompt_version2, bad_quality, bad-picture-chill-75v, bad-image-v2-39000, NG_DeepNegative_V1_4T, DRD_PNTE768:0.8), (deformed iris, deformed pupils, bad eyes, semi-realistic:1.4), (nsfw, cropped, lowres, text, watermark, logo, signature, jpeg artifacts, username, artist name, trademark, title, multiple view, Reference sheet, long neck, logo, tattoos, wires, ear rings, dirty face, monochrome, grayscale:1.2)"
     const negative2 = "(poorly drawn face)++, (dark skin, tan skin)++, (character out of frame)1.3, bad quality, low-res, (monochrome)1.1, (grayscale)1.3, acne, skin blemishes, bad anatomy, text, error, missing fingers, extra limbs, missing limbs, cut off, unrealistic, (asian face)++,  (cropped, lowres, text, watermark, logo, signature, jpeg artifacts, username, artist name, trademark, title, multiple view, Reference sheet, long neck, logo, tattoos)"
     const handleClick = async () => { 
         setLoadings(true)
         try {
         const data = {
-            body : `{"model":"${model}","denoising_strength":${denoising},"cfg_scale":4,"steps":30,"sampler":"Euler a","negative_prompt":"${negative1}","imageUrl":"${imageUrl}","prompt":"${prompt}"}`
+            body : `{"model":"${model}","denoising_strength":${denoising},"cfg_scale":6,"steps":30,"sampler":"DPM++ 2M Karras","negative_prompt":"${negative1}","imageUrl":"${imageUrl}","prompt":"${prompt}"}`
         }
         await axios.post(`${url}/prodia/generate`,data)
         .then(({ data }) => {
