@@ -11,9 +11,9 @@ import axios from 'axios';
 export default function Welcome(props) {
     const {title,url} = props
     const [model, setModel] = useState('dreamshaper_8.safetensors [9d40847d]');
-    const [prompt, setPrompt] = useState('puppies with glassess');
-    const [denoising, setDenoising] = useState(0.4);
-    const [time, setTime] = useState(5);
+    const [prompt, setPrompt] = useState('badass woman,  faint smile, <lora:epi_noiseoffset2:1> <lora:more_details_v10:0.5>');
+    const [denoising, setDenoising] = useState(0.9);
+    const [time, setTime] = useState(10);
     const {Option} = Select
     const [loadings, setLoadings] = useState(false);
     const [image, setImage] = useState('');
@@ -117,6 +117,12 @@ export default function Welcome(props) {
                     </div>
                         <div className='max-full p-2'>
                             <Card showHeader={false} style={{textAlign:'center'}}>
+                            <Row>
+                                <Col sm={24}>
+                                    <p>LoRa Helper</p>
+                                    <p style={{fontSize:12}}>{'<lora:age_slider_v20:3> <lora:muscle_slider_v1:2> <lora:weight_slider_v2:3> <lora:zoom_slider_v1:3> <lora:epi_noiseoffset2:1> <lora:eye_size_slider_v1:3> <lora:hair_length_slider_v1:3> <lora:more_details_v10:1> <lora:3DMM_V12:1> <lora:arcane_offset:1> <lora:linevichit3-v10:1>'}</p>
+                                </Col>
+                            </Row>
                             <Row>
                                 <Col sm={12}>URL</Col>
                                 <Col sm={12}><Input defaultValue={imageUrl} onChange={handleInputChange} /></Col>
